@@ -1,0 +1,82 @@
+.laporan-filter{
+  margin-bottom:16px;
+}
+
+.laporan-label{
+  font-size:12px;
+  color:#757575;
+  white-space:nowrap;
+}
+
+.laporan-date{
+  width:160px;
+  height:34px;
+}
+
+.print-title{
+  display:none;
+}
+
+.print-line{
+  margin-top:10px;
+}
+
+.laporan-stats{
+  grid-template-columns:repeat(2,1fr);
+  max-width:500px;
+  margin-bottom:16px;
+}
+
+.laporan-total{
+  font-size:20px;
+}
+
+.table-scroll{
+  overflow-x:auto;
+}
+
+.empty-laporan{
+  text-align:center;
+  color:#9e9e9e;
+  padding:24px;
+}
+
+.laporan-date-info{
+  font-size:12px;
+}
+
+.stok-habis{
+  color:#c62828;
+}
+
+.stok-menipis{
+  color:#E65100;
+}
+
+.stok-normal{
+  color:#212121;
+}
+
+.btn-export-excel{
+  background:#eaf7ef;
+  border-color:#b7e4c7;
+  color:#1b7f3a;
+}
+
+.btn-export-excel:hover{
+  background:#d8f3dc;
+  border-color:#95d5b2;
+  color:#0f6b2f;
+}
+
+.btn-export-pdf{
+  background:#fff1f2;
+  border-color:#fecdd3;
+  color:#be123c;
+}
+
+.btn-export-pdf:hover{
+  background:#ffe4e6;
+  border-color:#fda4af;
+  color:#9f1239;
+}

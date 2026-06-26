@@ -1,0 +1,24 @@
+.pelanggan-count{
+  font-size:12px;
+}
+
+.col-no{
+  width:40px;
+}
+
+.col-aksi{
+  width:90px;
+}
+
+.pelanggan-alamat{
+  max-width:200px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.empty-pelanggan{
+  text-align:center;
+  color:#9e9e9e;
+  padding:24px;
+}
