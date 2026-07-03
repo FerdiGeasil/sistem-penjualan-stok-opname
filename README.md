@@ -1,8 +1,3 @@
----
-
-### Kode Markdown Baru untuk `README.md` Anda:
-
-```markdown
 # 🛒 Sistem Penjualan dan Stok Opname
 
 ![PHP](https://img.shields.io/badge/PHP-Native-777BB4?logo=php&logoColor=white)
@@ -69,8 +64,7 @@ Project ini dikembangkan sebagai proyek Kerja Praktek (KP) dan seluruh fitur uta
 
 ## 🗂 Struktur Folder
 
-```
-
+```text
 SistemPenjualan
 │
 ├── css/
@@ -85,135 +79,3 @@ SistemPenjualan
 ├── koneksi.php            # Manajemen Koneksi Database
 ├── sistem_penjualan.sql    # Database Dump File
 └── [file_fitur_aplikasi].php
-
-```
-
----
-
-## ⚙️ Cara Menjalankan Project (Pilihan)
-
-Pertama, lakukan clone repository ini ke komputer lokal Anda:
-```bash
-git clone [https://github.com/USERNAME/sistem-penjualan-stok-opname.git](https://github.com/USERNAME/sistem-penjualan-stok-opname.git)
-cd sistem-penjualan-stok-opname
-
-```
-
-### Opsi A: Menggunakan Docker (Sangat Direkomendasikan)
-
-Metode ini memastikan aplikasi berjalan secara instan tanpa perlu mengonfigurasi PHP, Apache, atau MySQL secara manual di komputer Anda.
-
-1. **Jalankan Docker Compose:**
-Pastikan Docker Desktop sudah menyala, buka terminal di folder proyek ini, lalu jalankan:
-```bash
-docker compose up -d
-
-```
-
-
-2. **Setup Database di phpMyAdmin:**
-* Akses panel database melalui browser: `http://localhost:8081`
-* Login menggunakan Username: `root` dan Password: `rahasia_portofolio`
-* Buat database baru bernama `db_native_project`, lalu **Import** file `sistem_penjualan.sql`.
-
-
-3. **Akses Aplikasi:**
-* Buka browser Anda dan akses: **`http://localhost:8080`**
-
-
-
-*Catatan untuk Opsi Docker: File `koneksi.php` secara default dikonfigurasi menggunakan host `"db"` agar terhubung ke jaringan kontainer.*
-
----
-
-### Opsi B: Menggunakan XAMPP (Manual)
-
-Jika Anda lebih memilih menggunakan lingkungan server lokal tradisional:
-
-1. **Pindahkan Folder Proyek:**
-Salin folder proyek ini ke direktori server lokal Anda (misal: `C:/xampp/htdocs/SistemPenjualan`).
-2. **Sesuaikan File Koneksi Database:**
-Buka file `koneksi.php`, sesuaikan konfigurasi parameter database ke server lokal Anda:
-```php
-$conn = mysqli_connect("localhost", "root", "", "sistem_penjualan");
-
-```
-
-
-3. **Import Database:**
-* Buka phpMyAdmin lokal (`http://localhost/phpmyadmin`).
-* Buat database baru bernama `sistem_penjualan`, lalu **Import** file `sistem_penjualan.sql`.
-
-
-4. **Jalankan XAMPP Control Panel:**
-* Aktifkan modul **Apache** dan **MySQL**.
-
-
-5. **Akses Aplikasi:**
-* Buka browser Anda dan akses: `http://localhost/SistemPenjualan/`
-
-
-
----
-
-## 🛠 Teknologi
-
-* **PHP Native**
-* **MySQL 8.0**
-* **HTML5 & CSS3**
-* **JavaScript**
-* **Docker & Docker Compose**
-
----
-
-## 👨‍💻 Pengembang
-
-**Proyek Kerja Praktek (KP)**
-
-Program Studi Teknik Informatika
-
-Fakultas Ilmu Komputer
-
-**Universitas Pamulang**
-
----
-
-## 📄 Lisensi
-
-Project ini dibuat untuk keperluan pembelajaran, dokumentasi Kerja Praktek (KP), dan pengembangan portofolio profesional.
-
----
-
-## 📸 Preview Sistem
-
-*(Silakan lampirkan screenshot sistem Anda di bawah ini)*
-
-### Login
-
-### Dashboard
-
-### Manajemen Barang
-
-### Transaksi POS
-
-### Restock Barang
-
-### Stock Opname
-
-### Laporan Penjualan
-
-```
-
----
-
-### Langkah untuk memperbarui di GitHub:
-1. Buka file `README.md` Anda di VS Code.
-2. Blok seluruh isinya, lalu *paste* kode Markdown baru di atas.
-3. Simpan (`Ctrl + S`).
-4. Lakukan *commit* dan *push* bersama dengan file `Dockerfile`, `docker-compose.yml`, dan `index.php` yang baru saja kita buat ke repositori GitHub Anda menggunakan Git Bash atau Terminal VS Code:
-   ```bash
-   git add .
-   git commit -m "Feat: Add Docker configurations and update README documentation"
-   git push origin main
-
-```
