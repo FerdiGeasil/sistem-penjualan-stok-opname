@@ -1,60 +1,46 @@
 # 🛒 Sistem Penjualan dan Stok Opname
 
 ![PHP](https://img.shields.io/badge/PHP-Native-777BB4?logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![XAMPP](https://img.shields.io/badge/XAMPP-FF5722?logo=xampp&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![License](https://img.shields.io/badge/License-Educational-blue)
 
 Sistem Penjualan dan Stok Opname berbasis web yang dikembangkan sebagai proyek **Kerja Praktek (KP)**. Sistem ini membantu proses pengelolaan penjualan, manajemen stok, restock barang, serta stok opname secara real-time.
 
 ## 📑 Daftar Isi
-
-- Status Project
-- Fitur
-- Informasi Proyek
-- Struktur Folder
-- Cara Menjalankan
-- Teknologi
-- Pengembang
-- Lisensi
-- Preview Sistem
-- Catatan
+- [Status Project](#-status-project)
+- [Fitur Utama](#-fitur-utama)
+- [Informasi Proyek](#-informasi-proyek)
+- [Struktur Folder](#-struktur-folder)
+- [Cara Menjalankan](#️-cara-menjalankan-project)
+- [Teknologi](#-teknologi)
+- [Preview Sistem](#-preview-sistem)
+- [Pengembang](#-pengembang)
+- [Lisensi](#-lisensi)
 
 ## 🚀 Status Project
-
-✅ Completed
+✅ **Completed**
 
 Project ini dikembangkan sebagai proyek Kerja Praktek (KP) dan seluruh fitur utama telah selesai diimplementasikan.
-
-## 🎯 Fitur
-
-- Multi User Login
-- Dashboard Admin & Kasir
-- CRUD Master Data
-- Point of Sale (POS)
-- Restock Barang
-- Stock Opname
-- Laporan Penjualan
-- Export Data
 
 ---
 
 ## 📌 Informasi Proyek
-
-- **Nama Proyek:** Sistem Penjualan dan Stok Opname
-- **Jenis:** Web Application
-- **Bahasa Pemrograman:** PHP Native (Docker-Ready)
-- **Database:** MySQL
-- **Frontend:** HTML, CSS, JavaScript
-- **Web Server:** Apache (XAMPP/Laragon/Docker)
+- **Nama Proyek** : Sistem Penjualan dan Stok Opname
+- **Jenis** : Web Application
+- **Bahasa Pemrograman** : PHP Native
+- **Database** : MySQL
+- **Frontend** : HTML, CSS, JavaScript
+- **Web Server** : Apache (XAMPP / Laragon / Docker)
 
 ---
 
 ## ✨ Fitur Utama
 
 ### 🔐 Autentikasi
-- Login Multi User
+- Login Multi User (Admin & Kasir)
 - Logout
 - Ganti Password
 
@@ -66,8 +52,7 @@ Project ini dikembangkan sebagai proyek Kerja Praktek (KP) dan seluruh fitur uta
 
 ### 💳 Point of Sale (POS)
 - Transaksi Penjualan
-- Perhitungan Total Otomatis
-- Perhitungan Kembalian
+- Perhitungan Total & Kembalian Otomatis
 - Pengurangan Stok Otomatis
 - Export Data Penjualan
 
@@ -81,184 +66,91 @@ Project ini dikembangkan sebagai proyek Kerja Praktek (KP) dan seluruh fitur uta
 ### 📈 Laporan
 - Laporan Penjualan
 - Laporan Stok Barang
-- Export Laporan Excel
+- Export Laporan ke Excel
 
 ---
 
 ## 🗂 Struktur Folder
-
-
-```
-
-SistemPenjualan
-│
+```bash
+SistemPenjualan/
 ├── css/
 ├── img/
 │   └── produk/
 ├── js/
 ├── backup/
-├── screenshots/
-│
-├── Dockerfile              # Konfigurasi Environment PHP & Apache Container
-├── docker-compose.yml      # Orkestrasi Container (Web, MySQL, phpMyAdmin)
-├── index.php               # Entry point (Auto-Redirect ke Login)
 ├── barang.php
 ├── dashboard.php
 ├── dashboard_kasir.php
 ├── kategori.php
 ├── supplier.php
 ├── pelanggan.php
-├── pembelian.php
 ├── transaksi.php
 ├── laporan.php
 ├── stock_opname.php
-├── riwayat_opname.php
 ├── restock.php
-├── restock_log.php
 ├── login.php
 ├── logout.php
 ├── koneksi.php
 └── sistem_penjualan.sql
-
 ```
 
 ---
 
-## ⚙️ Cara Menjalankan Project (Pilihan)
+## ⚙️ Cara Menjalankan Project
 
-### Opsi A: Menggunakan Docker (Sangat Direkomendasikan)
+### 🐳 Dengan Docker (Optional)
 
-Metode ini memastikan aplikasi berjalan secara instan tanpa perlu mengonfigurasi PHP, Apache, atau MySQL secara manual di komputer Anda.
+1. Pastikan **Docker Desktop** sudah terinstal.
+2. Jalankan perintah:
+   ```bash
+   docker compose up -d
+   ```
+3. Buka phpMyAdmin di `http://localhost:8081`
+4. Import database `sistem_penjualan.sql`
+5. Akses aplikasi di `http://localhost:8080`
 
-#### 1. Clone Repository
-```bash
-git clone [https://github.com/FerdiGeasil/sistem-penjualan-stok-opname.git](https://github.com/FerdiGeasil/sistem-penjualan-stok-opname.git)
-cd sistem-penjualan-stok-opname
+> Detail lengkap ada di bagian Docker.
 
-```
+### 🛠️ Dengan XAMPP (Manual)
 
-#### 2. Jalankan Docker Compose
+1. **Clone atau Download Project**
+   ```bash
+   git clone https://github.com/FerdiGeasil/sistem-penjualan-stok-opname.git
+   ```
 
-Pastikan Docker Desktop sudah menyala, buka terminal di folder proyek ini, lalu jalankan:
+2. **Pindahkan Folder**
+   Masukkan folder project ke dalam `xampp/htdocs/`
 
-```bash
-docker compose up -d
+3. **Import Database**
+   - Buka **phpMyAdmin**
+   - Buat database baru bernama `sistem_penjualan`
+   - Import file `sistem_penjualan.sql`
 
-```
+4. **Konfigurasi Koneksi**
+   Edit file `koneksi.php`:
+   ```php
+   $conn = mysqli_connect("localhost", "root", "", "sistem_penjualan");
+   ```
 
-#### 3. Import Database
+5. **Jalankan XAMPP**
+   Nyalakan **Apache** dan **MySQL**
 
-* Buka browser dan akses phpMyAdmin Docker: `http://localhost:8081`
-* Login menggunakan Username: `root` dan Password: `rahasia_portofolio`
-* Buat database baru bernama `db_native_project`, lalu **Import** file `sistem_penjualan.sql`.
-
-#### 4. Akses Aplikasi
-
-Buka browser Anda dan akses: **`http://localhost:8080`** (Akan otomatis dialihkan ke halaman login).
-
-*Catatan untuk Opsi Docker: File `koneksi.php` secara default dikonfigurasi menggunakan host `"db"` agar terhubung ke jaringan kontainer.*
-
----
-
-### Opsi B: Menggunakan XAMPP (Manual)
-
-#### 1. Clone Repository
-
-```bash
-git clone [https://github.com/FerdiGeasil/sistem-penjualan-stok-opname.git](https://github.com/FerdiGeasil/sistem-penjualan-stok-opname.git)
-
-```
-
-atau download ZIP dari GitHub.
-
-#### 2. Pindahkan Project
-
-Salin folder ke:
-
-```
-xampp/htdocs/
-
-```
-
-Contoh:
-
-```
-xampp/htdocs/SistemPenjualan
-
-```
-
-#### 3. Import Database
-
-Buka phpMyAdmin
-
-```
-New Database
-↓
-Buat database
-↓
-Import
-↓
-sistem_penjualan.sql
-
-```
-
-#### 4. Ubah Koneksi Database
-
-Edit file `koneksi.php`
-Contoh:
-
-```php
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "sistem_penjualan"
-);
-
-```
-
-#### 5. Jalankan XAMPP
-
-Aktifkan:
-
-* Apache
-* MySQL
-
-#### 6. Buka Browser
-
-```
-http://localhost/SistemPenjualan/
-
-```
+6. **Akses Aplikasi**
+   Buka browser: `http://localhost/SistemPenjualan/`
 
 ---
 
 ## 🛠 Teknologi
-
-* PHP Native
-* MySQL
-* HTML5
-* CSS3
-* JavaScript
-* Apache
-* XAMPP
-* Docker & Docker Compose
-
----
-
-## 👨‍💻 Pengembang
-
-Proyek Kerja Praktek
-
-Universitas Pamulang
-
-Program Studi Teknik Informatika
+- **Backend** : PHP Native
+- **Database** : MySQL
+- **Frontend** : HTML5, CSS3, JavaScript
+- **Server** : Apache
+- **Tools** : XAMPP, Docker, phpMyAdmin
 
 ---
 
 ## 📄 Lisensi
-
-Project ini dibuat untuk keperluan pembelajaran dan Kerja Praktek (KP).
+Project ini dibuat untuk keperluan **pembelajaran** dan **Kerja Praktek (KP)**.
 
 ---
 
@@ -266,22 +158,37 @@ Project ini dibuat untuk keperluan pembelajaran dan Kerja Praktek (KP).
 
 ### Login
 
+![Login](screenshots/login.png)
+
 ### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
 
 ### Barang
 
+![Barang](screenshots/barang.png)
+
 ### Transaksi POS
+
+![POS](screenshots/transaksi.png)
 
 ### Restock Barang
 
+![Restock](screenshots/restock.png)
+
 ### Stock Opname
 
+![Stock Opname](screenshots/stock-opname.png)
+
 ### Laporan
+
+![Laporan](screenshots/laporan.png)
 
 ---
 
 ## 📌 Catatan
+- Default database menggunakan **XAMPP** (localhost).
+- Sesuaikan konfigurasi `koneksi.php` sebelum menjalankan aplikasi.
+- Untuk production, disarankan menggunakan environment yang lebih aman (bukan XAMPP).
 
-Default konfigurasi database menggunakan localhost dengan XAMPP.
-
-Silakan sesuaikan konfigurasi database pada file `koneksi.php` sebelum menjalankan aplikasi.
+---
