@@ -71,7 +71,7 @@ Project ini dikembangkan sebagai proyek Kerja Praktek (KP) dan seluruh fitur uta
 ---
 
 ## 🗂 Struktur Folder
-```bash
+```
 SistemPenjualan/
 ├── css/
 ├── img/
