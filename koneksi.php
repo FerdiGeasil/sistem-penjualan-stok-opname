@@ -10,11 +10,12 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Konfigurasi koneksi database Docker
 $conn = mysqli_connect(
-    "localhost",
+    "db",
     "root",
-    "",
-    "sistem_penjualan"
+    "rahasia_portofolio",
+    "db_native_project"
 );
 
 if (!$conn) {
@@ -32,7 +33,7 @@ function requireLogin() {
 
 function requireAdmin() {
     requireLogin();
-    if ($_SESSION['role'] !== 'admin') {
+    if (empty($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
         header("Location: dashboard.php?err=akses");
         exit;
     }
@@ -40,7 +41,7 @@ function requireAdmin() {
 
 function requireKasir() {
     requireLogin();
-    if ($_SESSION['role'] !== 'kasir') {
+    if (empty($_SESSION['role']) || $_SESSION['role'] !== 'kasir') {
         header("Location: dashboard.php");
         exit;
     }
@@ -54,7 +55,9 @@ if (!function_exists('intVal')) {
 }
 
 if (!function_exists('escStr')) {
-    function escStr($conn, $v) {
+    // Dioptimasi: Menggunakan global $conn agar pemanggilan di file lain lebih ringkas
+    function escStr($v) {
+        global $conn;
         return mysqli_real_escape_string($conn, trim((string)$v));
     }
 }
