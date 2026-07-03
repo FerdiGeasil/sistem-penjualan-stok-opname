@@ -11,14 +11,14 @@ Sistem Penjualan dan Stok Opname berbasis web yang dikembangkan sebagai proyek *
 
 ## 📑 Daftar Isi
 - [Status Project](#-status-project)
-- [Fitur Utama](#-fitur-utama)
 - [Informasi Proyek](#-informasi-proyek)
+- [Fitur Utama](#-fitur-utama)
 - [Struktur Folder](#-struktur-folder)
 - [Cara Menjalankan](#️-cara-menjalankan-project)
 - [Teknologi](#-teknologi)
-- [Preview Sistem](#-preview-sistem)
-- [Pengembang](#-pengembang)
 - [Lisensi](#-lisensi)
+- [Preview Sistem](#-preview-sistem)
+- [Catatan](#-catatan)
 
 ## 🚀 Status Project
 ✅ **Completed**
