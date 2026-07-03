@@ -1,267 +1,219 @@
+---
+
+### Kode Markdown Baru untuk `README.md` Anda:
+
+```markdown
 # 🛒 Sistem Penjualan dan Stok Opname
 
 ![PHP](https://img.shields.io/badge/PHP-Native-777BB4?logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-Educational-blue)
 
 Sistem Penjualan dan Stok Opname berbasis web yang dikembangkan sebagai proyek **Kerja Praktek (KP)**. Sistem ini membantu proses pengelolaan penjualan, manajemen stok, restock barang, serta stok opname secara real-time.
 
 ## 📑 Daftar Isi
-
-- Status Project
-- Fitur
-- Informasi Proyek
-- Cara Menjalankan
-- Teknologi
-- Preview Sistem
-- Pengembang
-- Lisensi
-
-## 🚀 Status Project
-
-✅ Completed
-
-Project ini dikembangkan sebagai proyek Kerja Praktek (KP) dan seluruh fitur utama telah selesai diimplementasikan.
-
-## 🎯 Fitur
-
-- Multi User Login
-- Dashboard Admin & Kasir
-- CRUD Master Data
-- Point of Sale (POS)
-- Restock Barang
-- Stock Opname
-- Laporan Penjualan
-- Export Data
+- [Status Project](#-status-project)
+- [Fitur Utama](#-fitur-utama)
+- [Informasi Proyek](#-informasi-proyek)
+- [Struktur Folder](#-struktur-folder)
+- [⚙️ Cara Menjalankan Project (Pilihan)](#️-cara-menjalankan-project-pilihan)
+  - [Opsi A: Menggunakan Docker (Sangat Direkomendasikan)](#opsi-a-menggunakan-docker-sangat-direkomendasikan)
+  - [Opsi B: Menggunakan XAMPP (Manual)](#opsi-b-menggunakan-xampp-manual)
+- [🛠 Teknologi](#-teknologi)
+- [👨‍💻 Pengembang](#-pengembang)
+- [📸 Preview Sistem](#-preview-sistem)
 
 ---
 
-## 📌 Informasi Proyek
-
-- **Nama Proyek:** Sistem Penjualan dan Stok Opname
-- **Jenis:** Web Application
-- **Bahasa Pemrograman:** PHP Native
-- **Database:** MySQL
-- **Frontend:** HTML, CSS, JavaScript
-- **Web Server:** Apache (XAMPP/Laragon)
+## 🚀 Status Project
+✅ **Completed**  
+Project ini dikembangkan sebagai proyek Kerja Praktek (KP) dan seluruh fitur utama telah selesai diimplementasikan.
 
 ---
 
 ## ✨ Fitur Utama
 
-### 🔐 Autentikasi
-- Login Multi User
-- Logout
-- Ganti Password
+### 🔐 Autentikasi & Security
+- Login Multi User (Admin & Kasir) dengan Session Guards.
+- Sanitasi input data (*Anti-SQL Injection*) terpusat pada sistem helper.
+- Ganti Password.
 
 ### 📦 Master Data
-- CRUD Barang
-- CRUD Kategori
-- CRUD Supplier
-- CRUD Pelanggan
+- CRUD Barang, Kategori, Supplier, dan Pelanggan.
 
 ### 💳 Point of Sale (POS)
-- Transaksi Penjualan
-- Perhitungan Total Otomatis
-- Perhitungan Kembalian
-- Pengurangan Stok Otomatis
-- Export Data Penjualan
+- Transaksi Penjualan dengan perhitungan total & kembalian otomatis.
+- Pengurangan stok otomatis (*real-time*) saat transaksi berhasil.
+- Ekspor riwayat transaksi.
 
-### 📊 Manajemen Stok
-- Restock Barang
-- Riwayat Restock
-- Stock Opname
-- Riwayat Stock Opname
-- Notifikasi Stok Minimum
+### 📊 Manajemen Stok & Opname
+- Fitur Restock Barang & Pencatatan Log Riwayat Restock.
+- Fitur **Stock Opname** berkala untuk sinkronisasi stok fisik dan sistem.
+- Notifikasi otomatis jika persediaan barang mencapai batas minimum.
 
 ### 📈 Laporan
-- Laporan Penjualan
-- Laporan Stok Barang
-- Export Laporan Excel
+- Laporan Penjualan & Stok Barang dengan fitur **Export Excel**.
+
+---
+
+## 📌 Informasi Proyek
+- **Nama Proyek:** Sistem Penjualan dan Stok Opname
+- **Jenis:** Web Application
+- **Bahasa Pemrograman:** PHP Native (Docker-Ready)
+- **Database:** MySQL 8.0
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Containerization:** Docker & Docker Compose
 
 ---
 
 ## 🗂 Struktur Folder
 
 ```
+
 SistemPenjualan
 │
 ├── css/
 ├── img/
 │   └── produk/
 ├── js/
-├── backup/
+├── screenshots/
 │
-├── barang.php
-├── dashboard.php
-├── dashboard_kasir.php
-├── kategori.php
-├── supplier.php
-├── pelanggan.php
-├── pembelian.php
-├── transaksi.php
-├── laporan.php
-├── stock_opname.php
-├── riwayat_opname.php
-├── restock.php
-├── restock_log.php
-├── login.php
-├── logout.php
-├── koneksi.php
-└── sistem_penjualan.sql
+├── Dockerfile              # Konfigurasi Environment PHP & Apache Container
+├── docker-compose.yml      # Orkestrasi Container (Web, MySQL, phpMyAdmin)
+├── index.php               # Entry point (Auto-Redirect ke Login)
+├── koneksi.php            # Manajemen Koneksi Database
+├── sistem_penjualan.sql    # Database Dump File
+└── [file_fitur_aplikasi].php
+
 ```
 
 ---
 
-## ⚙️ Cara Menjalankan Project
+## ⚙️ Cara Menjalankan Project (Pilihan)
 
-### 1. Clone Repository
-
+Pertama, lakukan clone repository ini ke komputer lokal Anda:
 ```bash
-git clone https://github.com/USERNAME/sistem-penjualan-stok-opname.git
+git clone [https://github.com/USERNAME/sistem-penjualan-stok-opname.git](https://github.com/USERNAME/sistem-penjualan-stok-opname.git)
+cd sistem-penjualan-stok-opname
+
 ```
 
-atau download ZIP dari GitHub.
+### Opsi A: Menggunakan Docker (Sangat Direkomendasikan)
+
+Metode ini memastikan aplikasi berjalan secara instan tanpa perlu mengonfigurasi PHP, Apache, atau MySQL secara manual di komputer Anda.
+
+1. **Jalankan Docker Compose:**
+Pastikan Docker Desktop sudah menyala, buka terminal di folder proyek ini, lalu jalankan:
+```bash
+docker compose up -d
+
+```
+
+
+2. **Setup Database di phpMyAdmin:**
+* Akses panel database melalui browser: `http://localhost:8081`
+* Login menggunakan Username: `root` dan Password: `rahasia_portofolio`
+* Buat database baru bernama `db_native_project`, lalu **Import** file `sistem_penjualan.sql`.
+
+
+3. **Akses Aplikasi:**
+* Buka browser Anda dan akses: **`http://localhost:8080`**
+
+
+
+*Catatan untuk Opsi Docker: File `koneksi.php` secara default dikonfigurasi menggunakan host `"db"` agar terhubung ke jaringan kontainer.*
 
 ---
 
-### 2. Pindahkan Project
+### Opsi B: Menggunakan XAMPP (Manual)
 
-Salin folder ke:
+Jika Anda lebih memilih menggunakan lingkungan server lokal tradisional:
 
-```
-xampp/htdocs/
-```
-
-Contoh:
-
-```
-xampp/htdocs/SistemPenjualan
-```
-
----
-
-### 3. Import Database
-
-Buka phpMyAdmin
-
-```
-New Database
-
-↓
-
-Buat database
-
-↓
-
-Import
-
-↓
-
-sistem_penjualan.sql
-```
-
----
-
-### 4. Ubah Koneksi Database
-
-Edit file
-
-```
-koneksi.php
-```
-
-Contoh:
-
+1. **Pindahkan Folder Proyek:**
+Salin folder proyek ini ke direktori server lokal Anda (misal: `C:/xampp/htdocs/SistemPenjualan`).
+2. **Sesuaikan File Koneksi Database:**
+Buka file `koneksi.php`, sesuaikan konfigurasi parameter database ke server lokal Anda:
 ```php
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "sistem_penjualan"
-);
-```
-
----
-
-### 5. Jalankan XAMPP
-
-Aktifkan
-
-- Apache
-- MySQL
-
----
-
-### 6. Buka Browser
+$conn = mysqli_connect("localhost", "root", "", "sistem_penjualan");
 
 ```
-http://localhost/SistemPenjualan/
-```
+
+
+3. **Import Database:**
+* Buka phpMyAdmin lokal (`http://localhost/phpmyadmin`).
+* Buat database baru bernama `sistem_penjualan`, lalu **Import** file `sistem_penjualan.sql`.
+
+
+4. **Jalankan XAMPP Control Panel:**
+* Aktifkan modul **Apache** dan **MySQL**.
+
+
+5. **Akses Aplikasi:**
+* Buka browser Anda dan akses: `http://localhost/SistemPenjualan/`
+
+
 
 ---
 
 ## 🛠 Teknologi
 
-- PHP Native
-- MySQL
-- HTML5
-- CSS3
-- JavaScript
-- Apache
-- XAMPP
+* **PHP Native**
+* **MySQL 8.0**
+* **HTML5 & CSS3**
+* **JavaScript**
+* **Docker & Docker Compose**
 
 ---
 
 ## 👨‍💻 Pengembang
 
-Proyek Kerja Praktek
-
-Universitas Pamulang
+**Proyek Kerja Praktek (KP)**
 
 Program Studi Teknik Informatika
+
+Fakultas Ilmu Komputer
+
+**Universitas Pamulang**
 
 ---
 
 ## 📄 Lisensi
 
-Project ini dibuat untuk keperluan pembelajaran dan Kerja Praktek (KP).
-
-## 📸 Preview Sistem
-
-### Login
-
-![Login](screenshots/login.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### Barang
-
-![Barang](screenshots/barang.png)
-
-### Transaksi POS
-
-![POS](screenshots/transaksi.png)
-
-### Restock Barang
-
-![Restock](screenshots/restock.png)
-
-### Stock Opname
-
-![Stock Opname](screenshots/stock-opname.png)
-
-### Laporan
-
-![Laporan](screenshots/laporan.png)
+Project ini dibuat untuk keperluan pembelajaran, dokumentasi Kerja Praktek (KP), dan pengembangan portofolio profesional.
 
 ---
 
-## 📌 Catatan
+## 📸 Preview Sistem
 
-Default konfigurasi database menggunakan localhost dengan XAMPP.
+*(Silakan lampirkan screenshot sistem Anda di bawah ini)*
 
-Silakan sesuaikan konfigurasi database pada file `koneksi.php` sebelum menjalankan aplikasi.
+### Login
+
+### Dashboard
+
+### Manajemen Barang
+
+### Transaksi POS
+
+### Restock Barang
+
+### Stock Opname
+
+### Laporan Penjualan
+
+```
+
+---
+
+### Langkah untuk memperbarui di GitHub:
+1. Buka file `README.md` Anda di VS Code.
+2. Blok seluruh isinya, lalu *paste* kode Markdown baru di atas.
+3. Simpan (`Ctrl + S`).
+4. Lakukan *commit* dan *push* bersama dengan file `Dockerfile`, `docker-compose.yml`, dan `index.php` yang baru saja kita buat ke repositori GitHub Anda menggunakan Git Bash atau Terminal VS Code:
+   ```bash
+   git add .
+   git commit -m "Feat: Add Docker configurations and update README documentation"
+   git push origin main
+
+```
