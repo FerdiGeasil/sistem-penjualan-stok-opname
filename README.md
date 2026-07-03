@@ -185,8 +185,10 @@ Project ini dibuat untuk keperluan **pembelajaran** dan **Kerja Praktek (KP)**.
 ---
 
 ## 📌 Catatan
-- Default database menggunakan **XAMPP** (localhost).
-- Sesuaikan konfigurasi `koneksi.php` sebelum menjalankan aplikasi.
-- Untuk production, disarankan menggunakan environment yang lebih aman (bukan XAMPP).
+
+- Project dapat dijalankan menggunakan **XAMPP** maupun **Docker**.
+- Untuk penggunaan XAMPP, sesuaikan konfigurasi `koneksi.php`.
+- Untuk deployment menggunakan Docker, gunakan konfigurasi pada `docker-compose.yml`.
+- Untuk production, disarankan menggunakan environment yang lebih aman daripada XAMPP.
 
 ---
