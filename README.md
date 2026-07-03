@@ -109,8 +109,6 @@ SistemPenjualan/
 4. Import database `sistem_penjualan.sql`
 5. Akses aplikasi di `http://localhost:8080`
 
-> Detail lengkap ada di bagian Docker.
-
 ### 🛠️ Dengan XAMPP (Manual)
 
 1. **Clone atau Download Project**
